@@ -5,9 +5,14 @@ import AppFooter from './components/AppFooter.vue';
 import AppMain from './components/AppMain.vue';
 
 export default{
+    components:{
+        AppMain,
+        AppFooter,
+        AppHeader,
+    },
     data(){
         return{
-            
+
         }
     }
 }
