@@ -8,6 +8,14 @@ export default{
         return{
 
         }
+    },
+    props:{
+        Characters:{
+            type: Array,
+            required: true,
+
+        }
+
     }
 }
 
@@ -17,6 +25,12 @@ export default{
 
 <template>
 <CharacterCard/>
+<ul>
+    <li v-for="character in characters" :key="character.id">
+        {{ character.name }}
+
+    </li>
+</ul>
 </template>
 
 <style>

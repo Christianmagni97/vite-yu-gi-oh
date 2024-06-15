@@ -19,9 +19,10 @@ export default {
     methods:{
         getCharacters{
             axios.get('https://rickandmortyapi.com/api/character')
-            .then(function (response) {
+            .then((response) =>{
     
-                console.log(response);
+                console.log(response.data.results);
+                this.characters = response.data.results;
             })
             .catch(function (error) {
    
@@ -46,7 +47,7 @@ export default {
 
 <template>
     
-    <CharactersList/>
+    <CharactersList :characters="characters"/>
 
 </template>
 
