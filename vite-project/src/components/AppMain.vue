@@ -17,7 +17,7 @@ export default {
 
     },
     methods:{
-        getCharacters{
+        getCharacters(){
             axios.get('https://rickandmortyapi.com/api/character')
             .then((response) =>{
     

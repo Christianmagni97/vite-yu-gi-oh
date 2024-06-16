@@ -1,5 +1,5 @@
 <script>
-import CharactersCard './CharacterCard.vue';
+import CharactersCard from'./CharacterCard.vue';
 export default{
     components:{
         CharacterCard,
