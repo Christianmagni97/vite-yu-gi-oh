@@ -33,6 +33,7 @@ export default {
         },
         created(){
             this.getCharacters();
+            console.log('ciao');
 
         }    
     
@@ -47,7 +48,7 @@ export default {
 
 <template>
     
-    <CharactersList :characters="characters"/>
+    <CharactersList :Characters="characters"/>
 
 </template>
 

@@ -2,7 +2,7 @@
 import CharactersCard from'./CharacterCard.vue';
 export default{
     components:{
-        CharacterCard,
+        CharactersCard,
     },
     data(){
         return{
@@ -24,7 +24,7 @@ export default{
 
 
 <template>
-<CharacterCard/>
+<CharactersCard/>
 <section class="characters-list container">
     <div class="row">
         <h1 class="col-12">
@@ -32,7 +32,7 @@ export default{
         </h1>
         <div class="col-12">
             <div class="row">
-                <article v-for="character in characters" :key="character.id" class="col-3">
+                <article v-for="character in Characters" :key="character.id" class="col-3">
                 <div class="card w-100" ;>
                    <img :src="character.img" class="card-img-top" alt="...">
                    <div class="card-body">
