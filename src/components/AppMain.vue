@@ -31,17 +31,15 @@ export default {
             .finally(function () {
             });
         },
-        created(){
+        
+    },
+    created(){
             this.getCharacters();
             console.log('ciao');
 
-        }    
-    
-        
-    }
-
-    
-        
+        }   
+     
+ 
 }
 
 </script>
