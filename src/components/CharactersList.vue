@@ -1,54 +1,49 @@
 <script>
-import CharactersCard from'./CharacterCard.vue';
-export default{
-    components:{
-        CharactersCard,
-    },
-    data(){
-        return{
+import { store } from '../store.js';
 
-        }
-    },
-    props:{
-        Characters:{
-            type: Array,
-            required: true,
-
-        }
-
+export default {
+        data() {
+    return {
+        store
     }
 }
-
-
+}
 </script>
 
-
 <template>
-<CharactersCard/>
-<section class="characters-list container">
-    <div class="row">
-        <h1 class="col-12">
-            Yu Gi Oh cards
-        </h1>
-        <div class="col-12">
-            <div class="row">
-                <article v-for="character in Characters" :key="character.id" class="col-3">
-                <div class="card w-100" ;>
-                   <img :src="character.img" class="card-img-top" alt="...">
-                   <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   </div>
-                </div>
-                {{ character.name }}
-            </article>
-
-            </div>
+    <div class="div-general">
+        <div class="div-first" v-for="item in store.caratteri" :key="item.id">
+            <div class="div-second">
+                <img :src="item.card_images[0].image_url" alt="Card">
             
+                <h3>
+                    {{ item.name }}
+                </h3>
+            </div>
         </div>
     </div>
-</section>
-
 </template>
 
-<style>
+<style lang="scss" scoped>
+    @use './style/partials/mixins.scss' as*;
+    @use './style/partials/variabls.scss' as*;
+
+    div.div-general {
+        max-width: 1200px;
+        background-color: #d48f38;
+    }
+
+    div.div-first{
+        display: inline-block;
+        max-width: 950px;
+        margin: 0 auto;
+        width: calc(100% / 6);
+        vertical-align: top;
+        margin: 1rem;
+    }
+
+        img{
+            width: 100%;
+        }
+
 </style>

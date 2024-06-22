@@ -1,54 +1,67 @@
 <script>
-import { store } from '../store';
-import CharactersList from'../components/CharactersList.vue';
-import AppSearch from './AppSearch.vue';
-import axios from 'axios';
+    import CharactersList from './CharactersList.vue';
+    import CharactersCard from './CharacterCard.vue';
+    import axios from 'axios';
+    import { store } from '../store.js'
 
-export default {
-    data() {
-        return {
-            store,
-            characters:[]
-        };
-    },
-    components: {
-        AppSearch ,
-        CharactersList,
-
-    },
-    methods:{
-        getCharacters(){
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-            .then((response) =>{
-    
-                console.log(response.data.results);
-                this.characters = response.data.results;
-            })
-            .catch(function (error) {
-   
-                console.log(error);
-            })
-            .finally(function () {
-            });
+    export default {
+        components:{
+            CharactersCard,
+            CharactersList,
         },
         
-    },
-    created(){
-            this.getCharacters();
-            console.log('ciao');
+        data() {
+    return {
+        store,
+        archetypes:[]
+    }
+},
 
-        }   
-     
- 
+methods:{
+    // API
+    getCharacters(){
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+        .then((response) => {
+        console.log(response.data.data);
+        this.store.caratteri = response.data.data
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+        },
+    
+        getArchetypes(){
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+            .then((response) => {
+            console.log(response.data.data);
+            this.archetypes = response.data.data
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
+        },
+    
+    funzioneDiProva() {
+        console.log('')
+    }
+},
+created(){
+    this.getCharacters();
+    this.funzioneDiProva();
+    this.getArchetypes();
 }
 
+}
 </script>
 
 <template>
-    
-    <CharactersList :Characters="characters"/>
-
+    <main>
+        <CharactersList :caratteri="store.caratteri"/>
+        <CharactersCard @cerca="funzioneDiProva" :archetypes="archetypes"/>
+    </main>
 </template>
 
-<style>
+<style lang="scss" scoped>
+    @use './style/partials/mixins.scss' as*;
+    @use './style/partials/variabls.scss' as*;
 </style>

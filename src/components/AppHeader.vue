@@ -1,18 +1,45 @@
 <script>
+export default {
+    data() {
+    return {
 
+        }
+    }
+}
 </script>
 
 <template>
-    <nav class="navbar bg-body-tertiary">
-       <div class="container-fluid">
-           <a class="navbar-brand" href="#">
-           <img src="https://1000logos.net/wp-content/uploads/2024/02/Yu-Gi-Oh-Logo-2001.png">
-           </a>
-  </div>
-</nav>
-
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <img src="../assets/img/progetto tu gi oh .webp" alt="">
+                </li>
+                <li>
+                    <p>
+                        Title  Yu-Gi-Oh Api
+                    </p>
+                </li>
+            </ul>
+        </nav>
+    </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @use './style/partials/mixins.scss' as*;
+    @use './style/partials/variabls.scss' as*;
 
+    img {
+        width: 280px;
+    }
+
+    nav ul {
+        padding: 5rem;
+        display: flex;
+        align-items: center;
+
+        p{
+            font-size: 3rem;
+        }
+    }
 </style>
