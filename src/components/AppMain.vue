@@ -56,8 +56,9 @@ created(){
 
 <template>
     <main>
-        <CharactersList :caratteri="store.caratteri"/>
         <CharactersCard @cerca="funzioneDiProva" :archetypes="archetypes"/>
+        <CharactersList :caratteri="store.caratteri"/>
+        
     </main>
 </template>
 
