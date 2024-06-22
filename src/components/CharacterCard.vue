@@ -21,14 +21,14 @@
 <style lang="scss" scoped>
     label {
         text-transform: uppercase;
-        padding: 1rem;
+        padding: 2rem;
     }
 
     select{
-        padding: .3rem 1rem .3rem 1rem;
+        padding: .2rem 2rem .2rem 2rem;
         background-color: rgb(255, 119, 0);
-        border-radius: .5rem;
+        border-radius: none;
         border-style: none;
-        margin-bottom: .5rem;
+        margin-bottom: 70px;
     }
 </style>
